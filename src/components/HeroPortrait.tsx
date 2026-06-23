@@ -36,7 +36,7 @@ export function HeroPortrait() {
       ref={wrap}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="relative mx-auto aspect-square w-[min(520px,92vw)]"
+      className="relative mx-auto aspect-square w-[min(520px,92vw)] scale-75 md:scale-100 translate-x-4 md:translate-x-0 origin-center"
       style={{ perspective: 1200 }}
     >
       {/* Orbits */}
