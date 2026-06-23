@@ -24,36 +24,19 @@ export function HeroPortrait() {
   const rx = useSpring(useTransform(my, [-0.5, 0.5], [10, -10]), { stiffness: 120, damping: 14 });
   const ry = useSpring(useTransform(mx, [-0.5, 0.5], [-12, 12]), { stiffness: 120, damping: 14 });
 
-  // Mouse handle for Desktop
-  const onMouseMove = (e: React.MouseEvent) => {
+  const onMove = (e: React.MouseEvent) => {
     const rect = wrap.current!.getBoundingClientRect();
     mx.set((e.clientX - rect.left) / rect.width - 0.5);
     my.set((e.clientY - rect.top) / rect.height - 0.5);
   };
-
-  // Touch handle for Mobile
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (!wrap.current) return;
-    const rect = wrap.current.getBoundingClientRect();
-    const touch = e.touches[0];
-    mx.set((touch.clientX - rect.left) / rect.width - 0.5);
-    my.set((touch.clientY - rect.top) / rect.height - 0.5);
-  };
-
-  // Reset positioning when pointer leaves or touch ends
-  const onLeave = () => { 
-    mx.set(0); 
-    my.set(0); 
-  };
+  const onLeave = () => { mx.set(0); my.set(0); };
 
   return (
     <div
       ref={wrap}
-      onMouseMove={onMouseMove}
+      onMouseMove={onMove}
       onMouseLeave={onLeave}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onLeave}
-      className="relative mx-auto aspect-square w-[min(520px,92vw)] touch-none"
+      className="relative mx-auto aspect-square w-[min(520px,92vw)]"
       style={{ perspective: 1200 }}
     >
       {/* Orbits */}
