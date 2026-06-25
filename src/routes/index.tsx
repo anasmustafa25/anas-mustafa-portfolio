@@ -107,7 +107,7 @@ const EXPERIENCE = [
       "Worked with Oracle SQL & Excel to clean and analyze operational data.",
       "Supported IT workflows with HIS Software in a live healthcare environment.",
     ],
-  },{
+  }, {
     role: "Web Developer Intern (MERN Stack)",
     company: "Gamica Cloud, Faisalabad",
     date: "Feb 2025 – May 2025",
@@ -125,7 +125,7 @@ const PROJECTS = [
     tag: "Computer Vision · YOLOv8",
     blurb: "AI security system for real-time shoplifting detection with custom threat-scoring.",
     tech: ["Python", "YOLOv8", "OpenCV", "PyTorch"],
-    image: "/images/motionguard.png", 
+    image: "/images/motionguard.png",
     github: " https://github.com/anasmustafa25/MotionGuard-AI-An-Automated-Retail-Security-System",
     problem: "Retail stores need automated, real-time loss-prevention without constant human monitoring.",
     approach: "Built a YOLOv8 detection pipeline with custom threat-score logic on top of frame-level object tracking, then exposed insights through a monitoring layer.",
@@ -268,16 +268,16 @@ function Portfolio() {
       formRef.current,
       "4fyxJtw_4NX-Gm14_"    // 👈 Replace with your EmailJS Public Key
     )
-    .then(() => {
-      setIsSending(false);
-      setStatusMessage("Message sent successfully! ✨");
-      formRef.current?.reset(); 
-    })
-    .catch((error) => {
-      setIsSending(false);
-      setStatusMessage("Failed to send message. Please try again.");
-      console.error("EmailJS Error:", error);
-    });
+      .then(() => {
+        setIsSending(false);
+        setStatusMessage("Message sent successfully! ✨");
+        formRef.current?.reset();
+      })
+      .catch((error) => {
+        setIsSending(false);
+        setStatusMessage("Failed to send message. Please try again.");
+        console.error("EmailJS Error:", error);
+      });
   };
 
   return (
@@ -495,7 +495,7 @@ function Portfolio() {
         </div>
       </Section>
 
-{/* SERVICES */}
+      {/* SERVICES */}
       <Section
         id="services"
         eyebrow="Services"
@@ -507,13 +507,13 @@ function Portfolio() {
             const IconComponent = s.icon;
             return (
               <Reveal key={s.title} delay={i * 0.05}>
-                <div 
+                <div
                   className="group relative h-full rounded-3xl glass-strong p-7 shadow-card-lux gold-border overflow-hidden transition-all duration-300"
                   data-cursor="hover"
                 >
                   {/* Subtle hover background accent glow */}
                   <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[var(--gold-bright)]/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   {/* Icon Wrapper Badge */}
                   <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--gold)]/10 border border-[var(--gold)]/20 text-[var(--gold-bright)] shadow-[0_0_15px_rgba(212,175,55,0.05)] mb-6 transition-transform duration-300 group-hover:scale-105">
                     <IconComponent className="h-5 w-5" />
@@ -533,15 +533,15 @@ function Portfolio() {
         </div>
       </Section>
 
-     {/* Standalone Metrics Bar Section */}
+      {/* Standalone Metrics Bar Section */}
       <section className="relative mx-auto w-full max-w-7xl px-6 py-12">
         <Reveal>
           <div className="w-full rounded-3xl glass-strong p-8 md:p-10 gold-border shadow-card-lux relative overflow-hidden">
-           
+
             <div className="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-[var(--gold-bright)]/10 blur-3xl" />
             <div className="pointer-events-none absolute -right-10 -bottom-10 h-40 w-40 rounded-full bg-[var(--gold-bright)]/10 blur-3xl" />
             <div className="relative grid grid-cols-2 gap-y-8 md:grid-cols-4 md:gap-y-0 text-center divide-y-0 md:divide-y-0 md:divide-x divide-[var(--gold)]/15">
-              
+
               {/* Stat 1 */}
               <div className="flex flex-col justify-center px-4">
                 <div className="font-display text-4xl md:text-5xl text-[var(--gold-bright)]">
@@ -587,7 +587,7 @@ function Portfolio() {
         </Reveal>
       </section>
 
-     {/* CONTACT */}
+      {/* CONTACT */}
       <Section
         id="contact"
         eyebrow="Contact"
@@ -605,7 +605,7 @@ function Portfolio() {
               <ContactItem Icon={Github} label="GitHub" value="anasmustafa25" href="https://github.com/anasmustafa25" />
             </div>
           </Reveal>
-          
+
           <Reveal delay={0.1} className="lg:col-span-8">
             <form
               ref={formRef}
@@ -627,7 +627,7 @@ function Portfolio() {
                   required
                 />
               </div>
-              
+
               <div className="flex items-center gap-4 flex-wrap">
                 <button
                   type="submit"
@@ -637,7 +637,7 @@ function Portfolio() {
                 >
                   {isSending ? "Sending..." : "Send message"} <ArrowRight className="h-4 w-4" />
                 </button>
-                
+
                 {statusMessage && (
                   <span className="text-xs tracking-wider text-[var(--gold-bright)] uppercase animate-pulse">
                     {statusMessage}
@@ -653,7 +653,7 @@ function Portfolio() {
         <div className="mx-auto max-w-7xl px-6">
           {/* Top Multi-Column Grid Layout */}
           <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pb-12">
-            
+
             {/* Column 1: Profile Brand Statement */}
             <div className="lg:col-span-2 space-y-4">
               <div className="flex items-center gap-3">
@@ -693,27 +693,27 @@ function Portfolio() {
             <div className="space-y-4">
               <h4 className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--gold-bright)]">Connect</h4>
               <div className="flex items-center gap-3">
-                <a 
-                  href="https://linkedin.com/in/anas-mustafa25" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com/in/anas-mustafa25"
+                  target="_blank"
                   rel="noreferrer"
                   className="grid h-10 w-10 place-items-center rounded-full border border-[var(--gold)]/20 glass hover:bg-[var(--gold)]/10 text-muted-foreground hover:text-[var(--gold-bright)] transition-all"
                   data-cursor="hover"
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
-                <a 
-                  href="https://github.com/anasmustafa25" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/anasmustafa25"
+                  target="_blank"
                   rel="noreferrer"
                   className="grid h-10 w-10 place-items-center rounded-full border border-[var(--gold)]/20 glass hover:bg-[var(--gold)]/10 text-muted-foreground hover:text-[var(--gold-bright)] transition-all"
                   data-cursor="hover"
                 >
                   <Github className="h-4 w-4" />
                 </a>
-                <a 
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=anasmustafa464@gmail.com" 
-                  target="_blank" 
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=anasmustafa464@gmail.com"
+                  target="_blank"
                   rel="noreferrer"
                   className="grid h-10 w-10 place-items-center rounded-full border border-[var(--gold)]/20 glass hover:bg-[var(--gold)]/10 text-muted-foreground hover:text-[var(--gold-bright)] transition-all"
                   data-cursor="hover"
@@ -815,7 +815,7 @@ function ProjectCard({ p, onOpen, index }: { p: typeof PROJECTS[number]; onOpen:
             <ExternalLink className="h-4 w-4 text-[var(--gold)] mt-1 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </div>
           <p className="mt-2 text-sm text-muted-foreground">{p.blurb}</p>
-          
+
           {/* Responsive container: stack tags on tiny screens, inline row on normal screens */}
           <div className="mt-5 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div className="flex flex-wrap gap-1.5">
