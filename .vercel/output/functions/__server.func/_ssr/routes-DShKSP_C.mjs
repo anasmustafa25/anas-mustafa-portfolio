@@ -3,7 +3,7 @@ import { i as useFrame, n as PointMaterial, o as require_jsx_runtime, r as Canva
 import { a as useTransform, c as motion, i as useSpring, l as AnimatePresence, n as animate, o as useMotionValue, r as useAnimationFrame, s as useScroll, t as useInView } from "../_libs/framer-motion.mjs";
 import { t as es_default } from "../_libs/emailjs__browser.mjs";
 import { C as Award, S as Boxes, _ as ChartLine, a as Phone, b as Briefcase, c as Linkedin, d as GitBranch, f as ExternalLink, g as CodeXml, h as Cpu, i as Sparkles, l as Layers, m as Database, n as X, o as MapPin, p as Download, r as Terminal, s as Mail, t as Zap, u as Github, v as ChartColumn, w as ArrowRight, x as Brain, y as Calendar } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BZq2zJ9H.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DShKSP_C.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var SECTIONS = [
@@ -967,7 +967,7 @@ function Portfolio() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				id: "home",
 				ref: heroRef,
-				className: "relative min-h-0 md:min-h-[85svh] noise",
+				className: "relative min-h-[85svh] noise",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "absolute inset-0 opacity-70",
@@ -980,7 +980,7 @@ function Portfolio() {
 							y: isDesktop ? heroY : 0,
 							opacity: heroOpacity
 						},
-						className: "relative mx-auto grid max-w-7xl gap-16 px-6 pt-24 pb-0 md:grid-cols-2 md:pt-32 md:pb-24 items-start",
+						className: "relative mx-auto grid max-w-7xl gap-16 px-6 pt-24 pb-10 md:grid-cols-2 md:pt-32 md:pb-24 items-start",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex flex-col justify-start",
 							children: [
@@ -1077,7 +1077,7 @@ function Portfolio() {
 							delay: .2,
 							className: "w-full",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "relative flex items-start justify-center mb-0 md:mb-0 md:-mt-12",
+								className: "relative flex items-start justify-center mb-6 md:mb-0 md:-mt-12",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeroPortrait, {})
 							})
 						})]
@@ -1090,7 +1090,6 @@ function Portfolio() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Section, {
 				id: "about",
-				className: "!pt-6 md:!pt-20",
 				eyebrow: "About",
 				title: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
 					"A ",

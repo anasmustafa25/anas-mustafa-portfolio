@@ -297,7 +297,7 @@ function Portfolio() {
         <div className="absolute inset-0 grid-bg" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
 
-        <motion.div style={{ y: isDesktop ? heroY : 0, opacity: heroOpacity }} className="relative mx-auto grid max-w-7xl gap-16 px-6 pt-24 pb-24 md:grid-cols-2 md:pt-32 md:pb-24 items-start">
+        <motion.div style={{ y: isDesktop ? heroY : 0, opacity: heroOpacity }} className="relative mx-auto grid max-w-7xl gap-16 px-6 pt-24 pb-10 md:grid-cols-2 md:pt-32 md:pb-24 items-start">
           {/* Left: text */}
           <div className="flex flex-col justify-start">
             <Reveal>
@@ -354,7 +354,7 @@ function Portfolio() {
 
           {/* Right: portrait */}
           <Reveal delay={0.2} className="w-full">
-            <div className="relative flex items-start justify-center mb-16 md:mb-0 md:-mt-12">
+            <div className="relative flex items-start justify-center mb-6 md:mb-0 md:-mt-12">
               <HeroPortrait />
             </div>
           </Reveal>
