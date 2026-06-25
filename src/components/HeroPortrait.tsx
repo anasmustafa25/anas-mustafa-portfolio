@@ -36,7 +36,7 @@ export function HeroPortrait() {
       ref={wrap}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="relative mx-auto aspect-square w-[min(520px,92vw)] scale-75 md:scale-100 translate-x-4 md:translate-x-0 origin-center"
+      className="relative mx-auto aspect-square w-[min(310px,85vw)] md:w-[min(360px,85vw)] translate-x-0 md:-translate-x-8 origin-center"
       style={{ perspective: 1200 }}
     >
       {/* Orbits */}
@@ -85,7 +85,7 @@ export function HeroPortrait() {
       {/* 3D-tilt portrait card */}
       <motion.div
         style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }}
-        className="absolute inset-[14%] rounded-[2rem] glass-strong shadow-card-lux overflow-hidden gold-border"
+        className="absolute inset-x-[14%] top-[8%] bottom-[20%] rounded-[2rem] glass-strong shadow-card-lux overflow-hidden gold-border"
       >
         {/* glow */}
         <div className="absolute -inset-10 bg-[radial-gradient(circle_at_30%_20%,rgba(255,217,90,0.35),transparent_60%)]" />

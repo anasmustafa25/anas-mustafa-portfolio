@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
 
 function Section({ id, eyebrow, title, subtitle, children }: any) {
   return (
-    <section id={id} className="relative mx-auto w-full max-w-7xl px-6 py-28 md:py-36">
+    <section id={id} className="relative mx-auto w-full max-w-7xl px-6 py-16 md:py-20">
       <Reveal>
         <div className="mb-14 max-w-3xl">
           {eyebrow && (
@@ -247,6 +247,14 @@ function Portfolio() {
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
 
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
@@ -279,7 +287,7 @@ function Portfolio() {
       <Navbar />
 
       {/* HERO */}
-      <section id="home" ref={heroRef} className="relative min-h-[100svh] noise">
+      <section id="home" ref={heroRef} className="relative min-h-[85svh] noise">
         {/* 3D backdrop */}
         <div className="absolute inset-0 opacity-70">
           <ClientOnly>
@@ -289,9 +297,9 @@ function Portfolio() {
         <div className="absolute inset-0 grid-bg" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
 
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative mx-auto grid max-w-7xl gap-16 px-6 pt-36 pb-24 md:grid-cols-2 md:pt-44">
+        <motion.div style={{ y: isDesktop ? heroY : 0, opacity: heroOpacity }} className="relative mx-auto grid max-w-7xl gap-16 px-6 pt-24 pb-24 md:grid-cols-2 md:pt-32 md:pb-24 items-start">
           {/* Left: text */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-start">
             <Reveal>
               <div className="mb-5 inline-flex w-fit items-center gap-2 rounded-full glass px-3 py-1 text-xs uppercase tracking-[0.22em] text-[var(--gold-bright)]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--gold-bright)] shadow-[0_0_10px_var(--gold-bright)]" />
@@ -345,15 +353,15 @@ function Portfolio() {
           </div>
 
           {/* Right: portrait */}
-          <Reveal delay={0.2}>
-            <div className="relative flex items-center justify-center">
+          <Reveal delay={0.2} className="w-full">
+            <div className="relative flex items-start justify-center mb-16 md:mb-0 md:-mt-12">
               <HeroPortrait />
             </div>
           </Reveal>
         </motion.div>
 
         {/* scroll cue */}
-        <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+        <div className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10px] uppercase tracking-[0.35em] text-muted-foreground hidden md:block">
           scroll
         </div>
       </section>
@@ -587,8 +595,8 @@ function Portfolio() {
         subtitle="Open to roles and collaborations in AI, Data Science, Analytics and Software Development."
       >
         {/* 🚀 FIXED: Added lg:max-w-[85rem] to expand the total row width on large screens so things stretch properly */}
-        <div className="mx-auto w-full max-w-7xl lg:max-w-[85rem] grid gap-6 lg:grid-cols-5 transition-all">
-          <Reveal className="lg:col-span-2">
+        <div className="mx-auto w-full max-w-7xl lg:max-w-[85rem] grid gap-6 lg:grid-cols-12 transition-all">
+          <Reveal className="lg:col-span-4">
             <div className="space-y-4">
               <ContactItem Icon={Mail} label="Email" value="anasmustafa464@gmail.com" href="https://mail.google.com/mail/?view=cm&fs=1&to=anasmustafa464@gmail.com" />
               <ContactItem Icon={Phone} label="Phone" value="+92 308 1872437" href="tel:+923081872437" />
@@ -598,7 +606,7 @@ function Portfolio() {
             </div>
           </Reveal>
           
-          <Reveal delay={0.1} className="lg:col-span-3">
+          <Reveal delay={0.1} className="lg:col-span-8">
             <form
               ref={formRef}
               onSubmit={sendEmail}
